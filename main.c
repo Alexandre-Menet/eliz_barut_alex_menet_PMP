@@ -17,6 +17,20 @@ int main() {
     };
 
     srand(time(NULL));
-    print_random_quote(quotes);
+
+    int action;
+    printf("Voici les actions qui peuvent être effectuées : \n");
+    printf("1.  Une citation aléatoire\n");
+    printf("2.  Afficher toutes les citations\n");
+    printf("Entrez l'action que vous voulez effectuer : ");
+    scanf("%d", &action);
+    if (action == 1) {
+        print_random_quote(quotes);
+    }
+    if (action == 2) {
+        for (int i = 0; i < MAX_QUOTES; i++) {
+            printf("%s\n", quotes[i]);
+        }
+    }
     return 0;
 }
